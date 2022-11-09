@@ -4,9 +4,9 @@ Subject: **Plataform of Web Development**
 Teaching by: [_Sebastião Pais_](https:github.com/sebastiaopais.github.io)
 Issues:
 - Web Crawler
-  -Scrapy
+  - Scrapy
 - Web Document Classification
-  -Text Classification algorithm
+  - Text Classification algorithm
 - Intelligent Search Engine
-  -Web mining
+  - Web mining
 
