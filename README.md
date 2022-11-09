@@ -1,7 +1,7 @@
 # Webcrawler-And-Search-Engine
 School Project
-Subject: **Plataform of Web Development**
-Teaching by: [_Sebastião Pais_](https:github.com/sebastiaopais.github.io)
+Subject: **Plataform of Web Development** <br>
+Teaching by: [_Sebastião Pais_](https:github.com/sebastiaopais.github.io)<br>
 **Issues:**
 - Web Crawler
   - Scrapy
@@ -16,10 +16,10 @@ Teaching by: [_Sebastião Pais_](https:github.com/sebastiaopais.github.io)
   - Express
   - Handlebars
   - Mongoose
- **Tasks**
- [x]Web Crawler
- [] Web Document Classification
- [] Intelligent Search Engine
+**Tasks**
+  - [x] Web Crawler
+  - [ ] Web Document Classification
+  - [ ] Intelligent Search Engine
  
   
 
