@@ -1,7 +1,7 @@
 # Webcrawler-And-Search-Engine
 School Project
 Subject: **Plataform of Web Development** <br>
-Taught by: [Sebastião Pais](https://github.com/sebastiaopais.github.io)<br>
+Taught by: [Sebastião Pais](https://github.com/sebastiaopais/sebastiaopais.github.io)<br>
 **Issues:**
 - Web Crawler
   - Scrapy
