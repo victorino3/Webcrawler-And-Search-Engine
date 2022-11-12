@@ -13,9 +13,8 @@ Taught by: [Sebastião Pais](https://github.com/sebastiaopais/sebastiaopais.gith
   - Web mining <br>
  
 **Tecs**
-  - Javascript and NodeJS
-  - Html && CSS
-  - 
+ - Javascript and NodeJS
+ - Html & CSS
 
 **Principle Package**
 
@@ -26,5 +25,5 @@ Taught by: [Sebastião Pais](https://github.com/sebastiaopais/sebastiaopais.gith
 **Tasks**
 
 - [X] Web Crawler
-- [ ] Web Document Classification
+- [X] Web Document Classification
 - [ ] Intelligent Search Engine
