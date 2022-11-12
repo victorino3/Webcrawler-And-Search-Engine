@@ -1,5 +1,8 @@
 import { MongoClient } from "mongodb"
 import { writeFileSync, appendFileSync} from "fs"
+import dotenv from "dotenv"
+dotenv.config({ path: 'dotenv/.env.prod' })
+dotenv.config({ encoding: 'latin1' })
 
 function replacePlusAndN(string){
     let data_1= string.replace("+","")
