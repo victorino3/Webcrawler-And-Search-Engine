@@ -4,7 +4,7 @@ import urlParser from "url"
 import {macbookPro} from ".././Backend/DB/Shemas/macbookpro.mjs"
 import {macbookAir} from ".././Backend/DB/Shemas/macbookair.mjs"
 import {iphoneColl} from ".././Backend/DB/Shemas/iphone.mjs"
-
+import {bigDataX} from ".././Backend/DB/Shemas/bigData.mjs"
 const seenUrls = {};
 
 function isEmpty(arr) {
@@ -172,14 +172,13 @@ const crawl = async ({ url, ignore }) => {
   //let dataPrice=makeIterable(finalPrice)
   //saveTodatabasePrice(TechNewPrice,dataPrice)
 
-/*
   let finalTitle = isEmpty(objTitle)
-  saveTodatabaseTitle(TechNewTitle ,finalTitle)*/
+  saveTodatabaseTitle(TechNewTitle ,finalTitle)
 
 
 
-  let dataImage = makeIterable(arrImage)
-  saveTodatabaseImage(TechNewImage, dataImage)
+  /*let dataImage = makeIterable(arrImage)
+  saveTodatabaseImage(TechNewImage, dataImage)*/
 
 
   links

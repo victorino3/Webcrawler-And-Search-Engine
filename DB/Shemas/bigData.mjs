@@ -11,4 +11,4 @@ const bigData = new Schema({
 
 );
 
-export const macbookAir = connected().model('bigData', bigData);
+export const bigDataX = connected().model('bigData', bigData);
