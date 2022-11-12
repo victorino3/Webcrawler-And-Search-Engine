@@ -10,7 +10,7 @@ Taught by: [Sebastião Pais](https://github.com/sebastiaopais/sebastiaopais.gith
 - Web Document Classification
   - Text Classification algorithm
 - Intelligent Search Engine
-  - Web mining
+  - Web mining <br>
 **Tecs**
   - Javascript and NodeJS
   - Html && CSS
