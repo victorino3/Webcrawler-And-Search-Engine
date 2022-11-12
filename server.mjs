@@ -13,7 +13,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const env =process.env.NODE_ENV || "dev" && "prod"
 ok(env === "dev" || env === "prod" , "Invalid environment specified")
-const confiPath =join(__dirname, "./src", `.env.${env}`)
+const confiPath =join(__dirname, "./dotenv", `.env.${env}`)
 config({
     path: confiPath,
 })
