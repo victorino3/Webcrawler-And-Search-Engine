@@ -173,7 +173,7 @@ const crawl = async ({ url, ignore }) => {
   //saveTodatabasePrice(TechNewPrice,dataPrice)
 
   let finalTitle = isEmpty(objTitle)
-  saveTodatabaseTitle(TechNewTitle ,finalTitle)
+  saveTodatabaseTitle(bigDataX ,finalTitle)
 
 
 
