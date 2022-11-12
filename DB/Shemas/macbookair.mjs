@@ -16,8 +16,3 @@ const macbookAirX = new Schema({
 );
 
 export const macbookAir = connected().model('macbookAir', macbookAirX);
-
-   
-   
-   
-
