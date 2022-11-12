@@ -10,15 +10,15 @@ function replacePlusAndN(string){
     //let data_4=data_3.replaceAll("," ")
     return data_3
 }
-export default async function run(filepath) {
+export default async function run() {
     try {
         const client = await MongoClient.connect(process.env.ULR_MONGODB);
         const db = client.db('mackdb');
-        const allData = await (await db.collection('macbookPro').find({}).toArray())
+        const allData = await (await db.collection('bigData').find({}).toArray())
         const myObj=[]
         allData.map((line)=>{
             //let eachLine = replacePlusAndN(line.title)
-            appendFileSync("new_macbook_pro.txt",line.title)
+            appendFileSync("all_product.txt",line.title)
         })
        
 
