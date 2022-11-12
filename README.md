@@ -1,8 +1,8 @@
 # Webcrawler-And-Search-Engine
 
 School Project
-Subject: **Plataform of Web Development** `<br>`
-Taught by: [Sebastião Pais](https://github.com/sebastiaopais/sebastiaopais.github.io)`<br>`
+Subject: **Plataform of Web Development** <br>
+Taught by: [Sebastião Pais](https://github.com/sebastiaopais/sebastiaopais.github.io) <br>
 **Issues:**
 
 - Web Crawler
@@ -11,7 +11,7 @@ Taught by: [Sebastião Pais](https://github.com/sebastiaopais/sebastiaopais.gith
   - Text Classification algorithm
 - Intelligent Search Engine
   - Web mining
-    **Tecs**
+**Tecs**
   - Javascript and NodeJS
   - Html && CSS
   - 
