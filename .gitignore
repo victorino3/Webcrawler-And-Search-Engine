@@ -1,9 +1,4 @@
 /node_modules
 /views
 /dotenv
-/DB/file.txt
-/DB/Iphone.txt
-/DB/macbook_air.txt
-/DB/myMac.txt
-/DB/macbook_pro.txt
-/DB/all_product.txt"
+.././Backend/DB/file.txt
