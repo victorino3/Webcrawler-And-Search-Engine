@@ -11,6 +11,7 @@ Taught by: [Sebastião Pais](https://github.com/sebastiaopais/sebastiaopais.gith
   - Text Classification algorithm
 - Intelligent Search Engine
   - Web mining <br>
+ 
 **Tecs**
   - Javascript and NodeJS
   - Html && CSS
