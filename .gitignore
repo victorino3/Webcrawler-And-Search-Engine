@@ -1,9 +1,9 @@
 /node_modules
 /views
 /dotenv
-file.txt
-Iphone.txt
-macbook_air.txt
-myMac.txt
-macbook_pro.txt
-all_product.txt"
+/DB/file.txt
+/DB/Iphone.txt
+/DB/macbook_air.txt
+/DB/myMac.txt
+/DB/macbook_pro.txt
+/DB/all_product.txt"
