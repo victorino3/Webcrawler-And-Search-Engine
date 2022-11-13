@@ -1,3 +1,6 @@
+import dotenv from "dotenv"
+dotenv.config({ path: "../../dotenv/.env.prod" })
+dotenv.config({ encoding: 'latin1' })
 import {connected} from ".././DB.js"
 import {Schema} from "mongoose"
 

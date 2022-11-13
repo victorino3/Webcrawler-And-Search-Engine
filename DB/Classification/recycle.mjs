@@ -2,9 +2,10 @@ import { writeFileSync, appendFileSync,readFileSync} from "fs"
 import {macbookPro} from ".././Shemas/macbookpro.mjs"
 import {macbookAir} from ".././Shemas/macbookair.mjs"
 import {iphoneColl} from ".././Shemas/iphone.mjs"
+import {bigDataX} from ".././Shemas/bigData.mjs"
 let MacsFile = "../myMac.txt"
 let iphoneFile = "../Iphone.txt"
-let fileimage = "../macbook_air.txt"
+let fileimage = "../all_product.txt"
 /** Use first this query coz we are a lot of product repeated
     After this query a use update to evoid continuos duplication
     await dbSchema.create({title:makeArray[index]})
@@ -15,8 +16,8 @@ class Recycle {
 
     static async showData(filepath,fileimage){
         //const file = Recycle.parseToProandAir(filepath)
-        //const file = Recycle.iphoneClassify(filepath)
-        const file = Recycle.getPattern(filepath,fileimage)
+        const file = Recycle.iphoneClassify(filepath)
+        //const file = Recycle.getPattern(filepath,fileimage)
         return file
     }
     
@@ -51,7 +52,7 @@ class Recycle {
         let file =await  this.readFileX(filepath)
         const makeArray = file.split("\n")
         for (let index = 0; index < makeArray.length; index++) {
-            await iphoneColl.findOneAndUpdate({ title: makeArray[index] }, { title: makeArray[index] }, {
+            await bigDataX.findOneAndUpdate({ title: makeArray[index] }, { title: makeArray[index] }, {
                 new: true,
                 upsert: true // Make this update into an upsert
             })
@@ -93,7 +94,7 @@ class Recycle {
 
 ;
 (async ()=>{
-    const file = await Recycle.showData(MacsFile,fileimage)
+    const file = await Recycle.showData(fileimage)
     console.log(file)
 })();
 
