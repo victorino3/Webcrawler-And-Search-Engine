@@ -18,8 +18,11 @@ export default async function run() {
         const client = await MongoClient.connect("mongodb://127.0.0.1:27017/mackdb");
         const db = client.db('mackdb');
         const mydb = await db.collection('bigData')
-
-        
+        /*const content = await mydb.find({}).toArray()
+        content.map((line) =>{
+            appendFileSync("allImage.txt",line.image+"\r\n")
+        }
+        )*/
         const text = await mydb.createIndex({"title":"text"})
         //title_text my index
         let myInput = "watch 45mm"

@@ -4,6 +4,7 @@ import exphbs  from 'express-handlebars'
 import {macbookPro} from ".././Backend/DB/Shemas/macbookpro.mjs"
 import {macbookAir} from ".././Backend/DB/Shemas/macbookair.mjs"
 import {iphoneColl} from ".././Backend/DB/Shemas/iphone.mjs"
+import {bigDataX} from ".././Backend/DB/Shemas/bigData.mjs"
 import {fileURLToPath} from 'url';
 import { join } from "path"
 import path from 'path';

@@ -54,7 +54,8 @@ class Recycle {
         for (let index = 0; index < makeArray.length; index++) {
             await bigDataX.findOneAndUpdate({ title: makeArray[index] }, { title: makeArray[index] }, {
                 new: true,
-                upsert: true // Make this update into an upsert
+                upsert: true, // Make this update into an upsert
+               
             })
         } 
         
