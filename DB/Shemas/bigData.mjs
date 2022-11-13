@@ -8,6 +8,10 @@ const bigData = new Schema({
 
         title: {
             type: String,
+        },
+        image: {
+            type: String,
+
         }},
     
         {collection: 'bigData'}
