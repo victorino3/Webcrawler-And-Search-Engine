@@ -15,14 +15,22 @@ function replacePlusAndN(string){
 }
 export default async function run() {
     try {
-        const client = await MongoClient.connect(process.env.ULR_MONGODB);
+        const client = await MongoClient.connect("mongodb://127.0.0.1:27017/mackdb");
         const db = client.db('mackdb');
-        const allData = await (await db.collection('bigData').find({}).toArray())
-        const myObj=[]
-        allData.map((line)=>{
-            //let eachLine = replacePlusAndN(line.title)
-            appendFileSync("all_product.txt",line.title)
-        })
+        const mydb = await db.collection('bigData')
+
+        
+        const text = await mydb.createIndex({"title":"text"})
+        //title_text my index
+        let myInput = "watch 45mm"
+        let searchResult = await mydb.find({$text: {$search: myInput}}, {
+            projection: {score: {$meta: "textScore"}},
+            sort : {score:{$meta:"textScore"}}}
+            ).toArray()
+        console.log(searchResult)
+        
+
+        
        
 
     } catch (error) {

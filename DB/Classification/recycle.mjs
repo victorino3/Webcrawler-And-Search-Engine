@@ -14,7 +14,7 @@ let fileimage = "../all_product.txt"
  */
 class Recycle {
 
-    static async showData(filepath,fileimage){
+    static async showData(filepath){
         //const file = Recycle.parseToProandAir(filepath)
         const file = Recycle.iphoneClassify(filepath)
         //const file = Recycle.getPattern(filepath,fileimage)
@@ -57,6 +57,7 @@ class Recycle {
                 upsert: true // Make this update into an upsert
             })
         } 
+        
     }
     //Make some search to get matching pattern
     static async getPattern(filepath,fileImage){
