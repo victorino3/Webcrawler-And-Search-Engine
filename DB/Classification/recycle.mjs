@@ -4,8 +4,8 @@ import {macbookAir} from ".././Shemas/macbookair.mjs"
 import {iphoneColl} from ".././Shemas/iphone.mjs"
 import {bigDataX} from ".././Shemas/bigData.mjs"
 let MacsFile = "../myMac.txt"
-let iphoneFile = "../Iphone.txt"
-let fileimage = "../all_product.txt"
+let allimage = "../allImage.txt"
+let all_product = "../all_product.txt"
 /** Use first this query coz we are a lot of product repeated
     After this query a use update to evoid continuos duplication
     await dbSchema.create({title:makeArray[index]})
@@ -14,10 +14,10 @@ let fileimage = "../all_product.txt"
  */
 class Recycle {
 
-    static async showData(filepath){
+    static async showData(filepath,fileimage){
         //const file = Recycle.parseToProandAir(filepath)
-        const file = Recycle.iphoneClassify(filepath)
-        //const file = Recycle.getPattern(filepath,fileimage)
+        //const file = Recycle.iphoneClassify(filepath)
+        const file = Recycle.getPattern(filepath,fileimage)
         return file
     }
     
@@ -69,16 +69,16 @@ class Recycle {
         let regex =/^MacBook Air*/
         for (let index = 0; index < makeArray.length; index++) {
             
-            if (makeArray[index].includes("MacBook Air 13")) {
+            if (makeArray[index].includes("iPhone 11 ")) {
                 for (let i = 0; i < fileOfimage.length; i++) {
-                    if ( makeArray[index].includes("Luz das estrelas") && fileOfimage[i].includes("starlight") ) {
+                    if ( makeArray[index].includes("Preto") && fileOfimage[i].includes("iphone_se3_productred") ) {
                         let spaceRemove = fileOfimage[i].replace("  ","")
                         let titledoc = makeArray[index]
                         let update = {
                             title:titledoc,
                             image:spaceRemove
                         }
-                        await macbookAir().findOneAndUpdate({ title: makeArray[index] }, update, {
+                        await bigDataX.findOneAndUpdate({ title: makeArray[index] }, update, {
                             new: true,
                             upsert: true // Make this update into an upsert
                         })
@@ -96,7 +96,7 @@ class Recycle {
 
 ;
 (async ()=>{
-    const file = await Recycle.showData(fileimage)
+    const file = await Recycle.showData(all_product,allimage)
     console.log(file)
 })();
 
