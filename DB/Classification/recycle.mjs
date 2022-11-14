@@ -69,9 +69,9 @@ class Recycle {
         let regex =/^MacBook Air*/
         for (let index = 0; index < makeArray.length; index++) {
             
-            if (makeArray[index].includes("iPhone 11 ")) {
+            if (makeArray[index].includes("iPad mini")) {
                 for (let i = 0; i < fileOfimage.length; i++) {
-                    if ( makeArray[index].includes("Preto") && fileOfimage[i].includes("iphone_se3_productred") ) {
+                    if ( makeArray[index].includes("Luz das estrelas") && fileOfimage[i].includes("iPad_mini_Wi-Fi_Space_Gray_") ) {
                         let spaceRemove = fileOfimage[i].replace("  ","")
                         let titledoc = makeArray[index]
                         let update = {
