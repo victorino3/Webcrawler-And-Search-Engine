@@ -6,12 +6,7 @@ import {bigDataX} from ".././Shemas/bigData.mjs"
 let MacsFile = "../myMac.txt"
 let allimage = "../allImage.txt"
 let all_product = "../all_product.txt"
-/** Use first this query coz we are a lot of product repeated
-    After this query a use update to evoid continuos duplication
-    await dbSchema.create({title:makeArray[index]})
-    console.log(makeArray[index])
-    await dbAir.create({title:makeArray[index] })
- */
+
 class Recycle {
 
     static async showData(filepath,fileimage){
