@@ -26,14 +26,14 @@ export default async function run(search) {
             projection: {score: {$meta: "textScore"}},
             sort : {score:{$meta:"textScore"}}}
             ).toArray()
-        /*let searchResultNumber = await mydb.find({$text: {$search: myInput}}, {
+        let searchResultNumber = await mydb.countDocuments({$text: {$search: myInput}}, {
                 projection: {score: {$meta: "textScore"}},
                 sort : {score:{$meta:"textScore"}}}
-                ).count()
+                ).cou
         
         myObj.outputNumber = searchResultNumber
-        myObj.searchResult = searchResult*/
-        return searchResult
+        myObj.searchResult = searchResult
+        return myObj
         
 
         
