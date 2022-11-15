@@ -13,24 +13,27 @@ function replacePlusAndN(string){
     //let data_4=data_3.replaceAll("," ")
     return data_3
 }
-export default async function run() {
+export default async function run(search) {
     try {
         const client = await MongoClient.connect("mongodb://127.0.0.1:27017/mackdb");
         const db = client.db('mackdb');
         const mydb = await db.collection('bigData')
-        /*const content = await mydb.find({}).toArray()
-        content.map((line) =>{
-            appendFileSync("allImage.txt",line.image+"\r\n")
-        }
-        )*/
         const text = await mydb.createIndex({"title":"text"})
         //title_text my index
-        let myInput = "watch 45mm"
+        const myObj = {}
+        let myInput = search
         let searchResult = await mydb.find({$text: {$search: myInput}}, {
             projection: {score: {$meta: "textScore"}},
             sort : {score:{$meta:"textScore"}}}
             ).toArray()
-        console.log(searchResult)
+        /*let searchResultNumber = await mydb.find({$text: {$search: myInput}}, {
+                projection: {score: {$meta: "textScore"}},
+                sort : {score:{$meta:"textScore"}}}
+                ).count()
+        
+        myObj.outputNumber = searchResultNumber
+        myObj.searchResult = searchResult*/
+        return searchResult
         
 
         
@@ -43,7 +46,7 @@ export default async function run() {
 
 }
 
-run()
+
 
 
 

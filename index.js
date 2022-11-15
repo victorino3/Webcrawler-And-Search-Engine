@@ -70,10 +70,10 @@ async function  saveTodatabaseTitle(shema, array) {
   try {
     for (let index = 0; index < array.length; index++) {
       if (array[index].length > 0) {
-        await shema.findOneAndUpdate({ title: array[index] }, { title: array[index] }, {
+        /*await shema.findOneAndUpdate({ title: array[index] }, { title: array[index] }, {
           new: true,
           upsert: true // Make this update into an upsert
-        })
+        })*/
       }
     }
 
@@ -172,8 +172,8 @@ const crawl = async ({ url, ignore }) => {
   //let dataPrice=makeIterable(finalPrice)
   //saveTodatabasePrice(TechNewPrice,dataPrice)
 
-  let finalTitle = isEmpty(objTitle)
-  saveTodatabaseTitle(bigDataX ,finalTitle)
+  /*let finalTitle = isEmpty(objTitle)
+  saveTodatabaseTitle(bigDataX ,finalTitle)*/
 
 
 

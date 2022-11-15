@@ -1,10 +1,7 @@
 import express from 'express'
 import cors from "cors"
 import exphbs  from 'express-handlebars'
-import {macbookPro} from ".././Backend/DB/Shemas/macbookpro.mjs"
-import {macbookAir} from ".././Backend/DB/Shemas/macbookair.mjs"
-import {iphoneColl} from ".././Backend/DB/Shemas/iphone.mjs"
-import {bigDataX} from ".././Backend/DB/Shemas/bigData.mjs"
+import run from "../Backend/DB/aggregation.mjs"
 import {fileURLToPath} from 'url';
 import { join } from "path"
 import path from 'path';
@@ -20,6 +17,8 @@ config({
 })
 const port =  process.env.PORT
 const app = express()
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 app.use(cors())
 //app.use('/public', express.static(__dirname + '/public'))
@@ -32,17 +31,16 @@ app.get('/', async(req, res) => {
 //macPro endpoint
 app.get('/product/macbook-pro', async(req, res) => {
     try {
-        let data = await macbookPro.find({}).lean()
-        res.render('main',{data});
+        res.render('main');
     } catch (error) {
         console.log(error)
         res.render('error');
     }
+    
 });
-//macAir endpoint
-app.get('/product/macbook-air', async(req, res) => {
+app.get('/product/macbookD', async(req, res) => {
     try {
-        let data = await macbookAir.find({}).lean()
+        let data = await run("macbook")
         res.render('maccontent',{data});
     } catch (error) {
         console.log(error)
@@ -50,16 +48,19 @@ app.get('/product/macbook-air', async(req, res) => {
     }
     
 });
-//iphone endpoint
-/*
-app.get('/product/iphone', async(req, res) => {
-    let data = await iphoneColl.find({}).lean()
-    res.render('main',{data});
+app.post('/product/search', async(req, res) => {
+    try {
+        const params = req.body
+        if(!params.name){
+            return res.render('error');
+        }
+        let data = await run(params.name)
+        console.log(data)
+        res.render('main',{data});
+    } catch (error) {
+        console.log(error)
+        res.render('error');
+    }
 });
-*/
-
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-
 
 app.listen(port, console.log("listening on port", port))
