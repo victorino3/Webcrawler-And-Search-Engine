@@ -29,7 +29,7 @@ export default async function run(search) {
         let searchResultNumber = await mydb.countDocuments({$text: {$search: myInput}}, {
                 projection: {score: {$meta: "textScore"}},
                 sort : {score:{$meta:"textScore"}}}
-                ).cou
+                )
         
         myObj.outputNumber = searchResultNumber
         myObj.searchResult = searchResult
