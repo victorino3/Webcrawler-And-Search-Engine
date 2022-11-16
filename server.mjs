@@ -38,16 +38,7 @@ app.get('/product/macbook-pro', async(req, res) => {
     }
     
 });
-app.get('/product/macbookD', async(req, res) => {
-    try {
-        let data = await run("macbook")
-        res.render('maccontent',{data});
-    } catch (error) {
-        console.log(error)
-        res.render('error');
-    }
-    
-});
+
 app.post('/product/search', async(req, res) => {
     try {
         const params = req.body
