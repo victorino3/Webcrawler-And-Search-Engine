@@ -54,8 +54,7 @@ app.post('/product/search', async(req, res) => {
         if(!params.name){
             return res.render('error');
         }
-        let data = await run(params.name)
-        console.log(data)
+        let data = await run(params.name)   +
         res.render('main',{data});
     } catch (error) {
         console.log(error)
