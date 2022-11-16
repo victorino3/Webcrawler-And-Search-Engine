@@ -56,7 +56,7 @@ function saveTodatabaseImage(shema, array) {
       if (array[index].startsWith("http") || array[index].startsWith("https")) {
         shema.findOneAndUpdate({ image: array[index] }, { image: array[index] }, {
           new: true,
-          upsert: true // Make this update into an upsert
+          upsert: true 
         });
       }
     }
@@ -70,10 +70,10 @@ async function  saveTodatabaseTitle(shema, array) {
   try {
     for (let index = 0; index < array.length; index++) {
       if (array[index].length > 0) {
-        /*await shema.findOneAndUpdate({ title: array[index] }, { title: array[index] }, {
+        await shema.findOneAndUpdate({ title: array[index] }, { title: array[index] }, {
           new: true,
-          upsert: true // Make this update into an upsert
-        })*/
+          upsert: true 
+        })
       }
     }
 
@@ -85,10 +85,9 @@ function saveTodatabasePrice(shema, array) {
   try {
     for (let index = 0; index < array.length; index++) {
       if (array[index].length > 0) {
-        //shema.create({price:array[index]});
         shema.findOneAndUpdate({ price: array[index] }, { price: array[index] }, {
           new: true,
-          upsert: true // Make this update into an upsert
+          upsert: true 
         });
       }
     }
@@ -97,7 +96,6 @@ function saveTodatabasePrice(shema, array) {
     console.error("Done in DB ", error)
   }
 }
-
 
 const getUrl = (link, host, protocol) => {
   if (link.startsWith("https")) {
@@ -118,8 +116,6 @@ const crawl = async ({ url, ignore }) => {
   const response = await fetch(url);
   const html = await response.text();
   const $ = load(html);
-
-
 
   const links = $("a")
     .map((i, link) => link.attribs.href)
@@ -146,21 +142,14 @@ const crawl = async ({ url, ignore }) => {
 
 
       for (let index = 0; index < data.length; index++) {
-        //Store title
-
         let regex = /^\n/
         let dataVerify = regex.test(dataTitle.text())
         if (dataVerify == false) {
           objTitle.title = dataTitle.text()
-
-
         }
-
-        //Store price
         if (dataPrice.text() != '' && dataPrice.text() != {}) arrPrice.push((dataPrice.text()))
 
       }
-      //console.log(arrPrice)
 
     }
    
@@ -192,7 +181,7 @@ const crawl = async ({ url, ignore }) => {
 };
 
 crawl({
-  url: process.env.Source_LINK,
+  //url: process.env.Source_LINK,
   ignore: "/search",
 });
 
