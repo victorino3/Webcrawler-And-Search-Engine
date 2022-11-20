@@ -1,9 +1,7 @@
-import { writeFileSync, appendFileSync,readFileSync} from "fs"
+import {readFileSync} from "fs"
 import {macbookPro} from ".././Shemas/macbookpro.mjs"
 import {macbookAir} from ".././Shemas/macbookair.mjs"
-import {iphoneColl} from ".././Shemas/iphone.mjs"
 import {bigDataX} from ".././Shemas/bigData.mjs"
-let MacsFile = "../myMac.txt"
 let allimage = "../allImage.txt"
 let all_product = "../all_product.txt"
 
@@ -61,12 +59,11 @@ class Recycle {
         const makeArray = file.split("\n")
         const fileImageText = await this.readFileX(fileImage)
         const fileOfimage=fileImageText.split("\n")
-        let regex =/^MacBook Air*/
         for (let index = 0; index < makeArray.length; index++) {
             
-            if (makeArray[index].includes("Apple Watch SE GPS")) {
+            if (makeArray[index].includes("Mac Studio")) {
                 for (let i = 0; i < fileOfimage.length; i++) {
-                    if ( makeArray[index].includes("Luz das estrelas") && fileOfimage[i].includes("apple_watch_series_7_gps_41mm_green_aluminum_clover_sport_") ) {
+                    if ( makeArray[index].includes("Mac Studio") && fileOfimage[i].includes("mac_studio_pdp_image_position-1") ) {
                         let spaceRemove = fileOfimage[i].replace("  ","")
                         let titledoc = makeArray[index]
                         let update = {
@@ -75,9 +72,8 @@ class Recycle {
                         }
                         await bigDataX.findOneAndUpdate({ title: makeArray[index] }, update, {
                             new: true,
-                            upsert: true // Make this update into an upsert
+                            upsert: true 
                         })
-                       // await dbSchema.create({title:makeArray[index]},{image:fileOfimage[i]})
                     }
                     
                 }
@@ -92,6 +88,5 @@ class Recycle {
 ;
 (async ()=>{
     const file = await Recycle.showData(all_product,allimage)
-    console.log(file)
 })();
 

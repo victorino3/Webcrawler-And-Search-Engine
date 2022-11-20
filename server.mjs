@@ -23,12 +23,7 @@ app.use(express.json());
 app.use(cors())
 //app.use('/public', express.static(__dirname + '/public'))
 app.set('view engine', 'hbs');
-// define a extensão e a instância do handlebars com o modelo que será interpretado o código
 app.engine('.hbs', exphbs.engine({ extname: '.hbs', defaultLayout: "index"}));
-app.get('/', async(req, res) => {
-    res.send("<h1>All Product is on ...</h1>")
-});  
-//macPro endpoint
 app.get('/product/macbook-pro', async(req, res) => {
     try {
         res.render('main');
@@ -45,7 +40,7 @@ app.post('/product/search', async(req, res) => {
         if(!params.name){
             return res.render('error');
         }
-        let data = await run(params.name)   +
+        let data = await run(params.name) 
         res.render('main',{data});
     } catch (error) {
         console.log(error)
