@@ -21,7 +21,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="http://localhost:3000/product/macbook-pro">Macbook Pro</a>
-          <a class="dropdown-item" href="http://localhost:3000/product/macbook-air">Macbook Air</a>
+          <a class="dropdown-item" href="http://localhost:3000/product/advanced">Macbook Air</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">All Iphone</a>
         </div>
@@ -34,30 +34,17 @@
   </div>
 
 </nav>
-<div class="container">
-
-  <div class="row height d-flex justify-content-center align-items-center">
-
-    <div class="col-md-8">
-      <form action="http://localhost:3000/product/search" method="POST">
-      <div class="search">
-        <i class="fa fa-search"></i>
-        <input type="text" class="form-control" placeholder="Have a question? Ask Now" name="name">
+<form action="http://localhost:3000/product/search" method="POST">
+<div class="container mt-5">
+        <input type="text" class="form-control" name="autoSearch" id="autoSearch" placeholder="Search..."/>
         <button class="btn btn-primary">Search</button>
-      </div>
-      </form>
-
-    </div>
-
-  </div>
 </div>
-{{#if data}}
-<p>{{this.outputNumber}}</p>
-{{/if}}
+</form>
+
 <!--Content-->
-<h2 class="mt-4 ml-3">Victor&amp;FurtunaStore</h2>
+
 <div class="row row-cols-1 row-cols-md-3 g-4 m-2 ">
-  {{#each data.searchResult}}
+  {{#each data}}
   <div class="col mb-2">
     <div class="card">
       <img src={{this.image}} class="card-img-top img-thumbnail" alt="...">
@@ -75,3 +62,13 @@
   {{/each}}
 
 </div>
+
+<script type="text/javascript">
+      $(function () {
+        $("#autoSearch").autocomplete({
+          name: "autoSearch",
+          source: "http://localhost:3000/auto-search?key=%QUERY",
+          limit: 6,
+        });
+      });
+</script>

@@ -1,7 +1,7 @@
 import express from 'express'
 import cors from "cors"
 import exphbs  from 'express-handlebars'
-import run from "../Backend/DB/aggregation.mjs"
+import {run,completeSearch} from "../Backend/DB/aggregation.mjs"
 import {fileURLToPath} from 'url';
 import { join } from "path"
 import path from 'path';
@@ -22,8 +22,10 @@ app.use(express.json());
 
 app.use(cors())
 //app.use('/public', express.static(__dirname + '/public'))
+
 app.set('view engine', 'hbs');
 app.engine('.hbs', exphbs.engine({ extname: '.hbs', defaultLayout: "index"}));
+
 app.get('/product/macbook-pro', async(req, res) => {
     try {
         res.render('main');
@@ -37,30 +39,26 @@ app.get('/product/macbook-pro', async(req, res) => {
 app.post('/product/search', async(req, res) => {
     try {
         const params = req.body
-        if(!params.name){
+        if(!params.autoSearch){
             return res.render('error');
         }
-        let data = await run(params.name) 
+        let data = await run(params.autoSearch) 
         res.render('main',{data});
     } catch (error) {
         console.log(error)
         res.render('error');
     }
 });
-app.get('/auto-search', function (req, res) {
-    /*db.query(
-      'SELECT name FROM countries WHERE name LIKE "%' +
-        req.query.term +
-        '%"',
-      function (err, rows, fields) {
-        if (err) throw err
+
+app.get('/auto-search',async (req, res) => {
+    let data = await completeSearch(req.query.term) 
         var DataList = []
-        for (i = 0; i < rows.length; i++) {
-          DataList.push(rows[i].name)
+        for (let i = 0; i < data.length; i++) {
+          DataList.push(data[i].title)
         }
         res.end(JSON.stringify(DataList))
       },
-    )*/
-  })
+    
+)
 
 app.listen(port, console.log("listening on port", port))
