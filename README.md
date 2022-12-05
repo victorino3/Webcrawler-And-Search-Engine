@@ -26,4 +26,4 @@ Taught by: [Sebastião Pais](https://github.com/sebastiaopais/sebastiaopais.gith
 
 - [X] Web Crawler
 - [X] Web Document Classification
-- [ ] Intelligent Search Engine
+- [X] Intelligent Search Engine
