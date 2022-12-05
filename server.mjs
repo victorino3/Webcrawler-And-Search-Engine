@@ -47,5 +47,20 @@ app.post('/product/search', async(req, res) => {
         res.render('error');
     }
 });
+app.get('/auto-search', function (req, res) {
+    /*db.query(
+      'SELECT name FROM countries WHERE name LIKE "%' +
+        req.query.term +
+        '%"',
+      function (err, rows, fields) {
+        if (err) throw err
+        var DataList = []
+        for (i = 0; i < rows.length; i++) {
+          DataList.push(rows[i].name)
+        }
+        res.end(JSON.stringify(DataList))
+      },
+    )*/
+  })
 
 app.listen(port, console.log("listening on port", port))
