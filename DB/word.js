@@ -11,10 +11,5 @@ resultWord
 }).catch((err) => {
     
 });
-let keys = Object.keys(resultWord)
 
-/*for (const iterator of resultWord) {
-    console.log(synonyms(iterator));
-}
-let word = synonyms(inputUser);
-console.log(word)*/
+
