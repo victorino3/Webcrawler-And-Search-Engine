@@ -1,5 +1,4 @@
 import { MongoClient } from "mongodb"
-import { writeFileSync, appendFileSync} from "fs"
 import dotenv from "dotenv"
 dotenv.config({ path: 'dotenv/.env.prod' })
 dotenv.config({ encoding: 'latin1' })
