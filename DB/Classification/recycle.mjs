@@ -8,8 +8,6 @@ let all_product = "../all_product.txt"
 class Recycle {
 
     static async showData(filepath,fileimage){
-        //const file = Recycle.parseToProandAir(filepath)
-        //const file = Recycle.iphoneClassify(filepath)
         const file = Recycle.getPattern(filepath,fileimage)
         return file
     }

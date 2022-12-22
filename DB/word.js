@@ -9,7 +9,7 @@ resultWord
         console.log(synonyms(iterator));
     }
 }).catch((err) => {
-    
+    return err
 });
 
 
