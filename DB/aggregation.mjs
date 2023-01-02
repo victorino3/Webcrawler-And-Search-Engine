@@ -1,5 +1,6 @@
 import { MongoClient } from "mongodb"
 import dotenv from "dotenv"
+import alterSearch from "./helpers/naturalprocess"
 dotenv.config({ path: 'dotenv/.env.prod' })
 dotenv.config({ encoding: 'latin1' })
 
@@ -10,16 +11,17 @@ async function run(search) {
         const mydb = await db.collection('bigData')
         const text = await mydb.createIndex({"title":"text"})
         let myInput = search
+        let newImpnut = alterSearch(search) 
         let searchResult = await mydb.find({$text: {$search: myInput}}, {
             projection: {score: {$meta: "textScore"}},
             sort : {score:{$meta:"textScore"}}}
             ).toArray()
-        return searchResult
-        
-
-        
-       
-
+        let distanceToCompare = await mydb.find({$text: {$search: newImpnut}}, {
+                projection: {score: {$meta: "textScore"}},
+                sort : {score:{$meta:"textScore"}}}
+                ).toArray()  
+        return searchResult ? searchResult : distanceToCompare
+                     
     } catch (error) {
         console.error(error)
     }
