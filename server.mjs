@@ -43,6 +43,7 @@ app.post('/product/search', async(req, res) => {
             return res.render('error');
         }
         let data = await run(params.autoSearch) 
+        
         res.render('main',{data});
     } catch (error) {
         console.log(error)

@@ -9,15 +9,17 @@ let arrayKeys = [
     "macintosh",
     ]
 function alterSearch(usersearch){
+let userSearch=usersearch 
 let newValueToSearch ="";
-let distanceToCompare = 0.6
-for (let index = 0; index < arrayKeys.length; index++) {
-    //If it returns some value more that 0.2 means that there is no much distance bettewn words
-    let distance = natural.JaroWinklerDistance(usersearch,arrayKeys[index])
-    if(distance > distanceToCompare){
-        newValueToSearch = arrayKeys[index];
+let distanceToCompare = 0.5
+    for (let index = 0; index < arrayKeys.length; index++) {
+        //If it returns some value more that 0.2 means that there is no much distance bettewn words
+        let distance = natural.JaroWinklerDistance(userSearch,arrayKeys[index])
+        if(distance > distanceToCompare){
+            newValueToSearch = arrayKeys[index];
+        }
     }
-}
+return newValueToSearch
 }
 
 export {alterSearch}
