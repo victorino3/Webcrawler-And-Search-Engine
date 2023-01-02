@@ -1,6 +1,6 @@
 import { MongoClient } from "mongodb"
-import dotenv from "dotenv"
-import alterSearch from "./helpers/naturalprocess"
+import {dotenv} from "dotenv"
+import {alterSearch} from "./helpers/naturalprocess.js"
 dotenv.config({ path: 'dotenv/.env.prod' })
 dotenv.config({ encoding: 'latin1' })
 

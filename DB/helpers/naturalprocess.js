@@ -8,7 +8,7 @@ let arrayKeys = [
     "Computer",
     "macintosh",
     ]
-export function alterSearch(usersearch){
+function alterSearch(usersearch){
 let newValueToSearch ="";
 let distanceToCompare = 0.6
 for (let index = 0; index < arrayKeys.length; index++) {
@@ -19,5 +19,7 @@ for (let index = 0; index < arrayKeys.length; index++) {
     }
 }
 }
+
+export {alterSearch}
 
 
