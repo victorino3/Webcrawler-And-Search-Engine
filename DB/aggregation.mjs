@@ -11,7 +11,8 @@ async function run(search) {
         const mydb = await db.collection('bigData')
         const text = await mydb.createIndex({"title":"text"})
         let myInput = search
-        let newImpnut = alterSearch(search) 
+        let splitInput = search.split(' ')
+        let newImpnut = alterSearch(splitInput[0]) 
         let searchResult = await mydb.find({$text: {$search: myInput}}, {
             projection: {score: {$meta: "textScore"}},
             sort : {score:{$meta:"textScore"}}}
