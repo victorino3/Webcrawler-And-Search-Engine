@@ -14,10 +14,18 @@ async function run(search) {
             ).toArray()
         let splitInput = search.trim().split(' ')
         let newInput = alterSearch(splitInput[0]) 
-    
-        let distanceToCompare =await mydb.find({ 'title': new RegExp(newInput, 'i') }).toArray()
-        console.log(distanceToCompare)
-        return  searchResult != null || undefined ? searchResult : distanceToCompare
+        let word_1 ="macintosh"
+        let word_2 =""
+        if(newInput.includes(word_1)){
+            
+            let distanceToCompare =await mydb.find({ 'title': new RegExp(newInput.substring(0, 3), 'ig') }).toArray()
+            console.log(distanceToCompare)
+            if(searchResult == null || searchResult == undefined){
+                return distanceToCompare
+            }
+            return searchResult
+        }
+        
                      
     } catch (error) {
         console.error(error)
