@@ -8,7 +8,7 @@ async function run(search) {
         const mydb = await db.collection('bigData')
         const text = await mydb.createIndex({"title":"text"})
         let myInput = search
-        let splitInput = search.split(' ')
+        let splitInput = search.trim().split(' ')
         let newImpnut = alterSearch(splitInput[0]) 
         let searchResult = await mydb.find({$text: {$search: myInput}}, {
             projection: {score: {$meta: "textScore"}},
@@ -18,7 +18,7 @@ async function run(search) {
                 projection: {score: {$meta: "textScore"}},
                 sort : {score:{$meta:"textScore"}}}
                 ).toArray()  
-        return searchResult ? searchResult : distanceToCompare
+        return searchResult 
                      
     } catch (error) {
         console.error(error)
