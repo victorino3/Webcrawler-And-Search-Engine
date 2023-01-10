@@ -1,6 +1,6 @@
 import  natural from "natural";
 let arrayKeys = [
-    "maça","macs",
+    "maça","mac",
     "apple Tv",
     "Computador",
     "relogio",
@@ -11,7 +11,7 @@ let arrayKeys = [
 function alterSearch(usersearch){
 let userSearch=usersearch 
 let newValueToSearch ="";
-let distanceToCompare = 0.5
+let distanceToCompare = 0.4
     for (let index = 0; index < arrayKeys.length; index++) {
         //If it returns some value more that 0.2 means that there is no much distance bettewn words
         let distance = natural.JaroWinklerDistance(userSearch,arrayKeys[index])
