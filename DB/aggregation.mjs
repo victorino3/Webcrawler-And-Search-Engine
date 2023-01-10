@@ -19,7 +19,7 @@ async function run(search) {
         if(newInput.includes(word_1)){
             
             let distanceToCompare =await mydb.find({ 'title': new RegExp(newInput.substring(0, 3), 'ig') }).toArray()
-            console.log(distanceToCompare)
+            
             if(searchResult == null || searchResult == undefined){
                 return distanceToCompare
             }
