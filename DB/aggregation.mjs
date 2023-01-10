@@ -12,19 +12,23 @@ async function run(search) {
             projection: {score: {$meta: "textScore"}},
             sort : {score:{$meta:"textScore"}}}
             ).toArray()
-        let splitInput = search.trim().split(' ')
+
+        let splitInput = myInput.trim().split(' ')
         let newInput = alterSearch(splitInput[0]) 
         let word_1 ="macintosh"
         let word_2 =""
+        
         if(newInput.includes(word_1)){
-            
+            console.log(searchResult)
             let distanceToCompare =await mydb.find({ 'title': new RegExp(newInput.substring(0, 3), 'ig') }).toArray()
-            
-            if(searchResult == null || searchResult == undefined){
+            console.log(distanceToCompare)
+            if(searchResult.length > -1){
                 return distanceToCompare
             }
-            return searchResult
+            
+           
         }
+        return searchResult
         
                      
     } catch (error) {

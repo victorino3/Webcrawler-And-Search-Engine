@@ -1,9 +1,9 @@
 import  natural from "natural";
 let arrayKeys = [
-    "maça","mac",
+    "maça","macs",
     "apple Tv",
     "Computador",
-    "relógio",
+    "relogio",
     "watch",
     "Computer",
     "macintosh",
