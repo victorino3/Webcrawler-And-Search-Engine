@@ -109,7 +109,6 @@ const getUrl = (link, host, protocol) => {
 
 const crawl = async ({ url, ignore }) => {
   if (seenUrls[url]) return;
-  //console.log("crawling", url);
   seenUrls[url] = true;
   const { host, protocol } = urlParser.parse(url);
 
@@ -155,20 +154,6 @@ const crawl = async ({ url, ignore }) => {
    
 
   }
- /* let finalPrice = ChangeData(arrPrice)
-  let finalImage=[]*/
-
-  //let dataPrice=makeIterable(finalPrice)
-  //saveTodatabasePrice(TechNewPrice,dataPrice)
-
-  /*let finalTitle = isEmpty(objTitle)
-  saveTodatabaseTitle(bigDataX ,finalTitle)*/
-
-
-
-  /*let dataImage = makeIterable(arrImage)
-  saveTodatabaseImage(TechNewImage, dataImage)*/
-
 
   links
     .filter((link) => link.includes(host) && !link.includes(ignore))

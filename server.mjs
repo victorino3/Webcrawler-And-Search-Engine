@@ -21,7 +21,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use(cors())
-//app.use('/public', express.static(__dirname + '/public'))
 
 app.set('view engine', 'hbs');
 app.engine('.hbs', exphbs.engine({ extname: '.hbs', defaultLayout: "index"}));

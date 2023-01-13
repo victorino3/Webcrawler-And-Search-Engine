@@ -25,7 +25,7 @@ class Recycle {
             if (regex.test(makeArray[index])) {
                 await macbookPro.findOneAndUpdate({ title: makeArray[index] }, { title: makeArray[index] }, {
                     new: true,
-                    upsert: true // Make this update into an upsert
+                    upsert: true 
                 })
                 
             }
@@ -33,7 +33,7 @@ class Recycle {
 
                 await macbookAir.findOneAndUpdate({ title: makeArray[index] }, { title: makeArray[index] }, {
                     new: true,
-                    upsert: true // Make this update into an upsert
+                    upsert: true 
                 })
             }
         }    
@@ -51,7 +51,6 @@ class Recycle {
         } 
         
     }
-    //Make some search to get matching pattern
     static async getPattern(filepath,fileImage){
         let file =await this.readFileX(filepath)
         const makeArray = file.split("\n")
