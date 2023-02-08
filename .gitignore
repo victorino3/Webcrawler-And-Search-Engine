@@ -7,3 +7,7 @@ myMac.txt
 macbook_pro.txt
 all_product.txt
 allImage.txt
+index.js
+.nycrc.json
+/coverage
+/.nyc_output

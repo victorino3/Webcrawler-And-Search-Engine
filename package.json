@@ -5,7 +5,8 @@
   "main": "server.mjs",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha --experimental-modules --no-warnings test/*.test.mjs",
+    "test-cov": "npx nyc mocha --parallel --experimental-modules --no-warnings test/*.test.mjs",
     "start": "nodemon server.mjs"
   },
   "keywords": [],
@@ -18,14 +19,18 @@
     "express": "^4.18.2",
     "express-handlebars": "^6.0.6",
     "fs": "^0.0.1-security",
+    "mocha": "^10.2.0",
     "mongodb": "^4.10.0",
     "mongoose": "^6.6.5",
     "natural": "^5.2.4",
     "node-fetch": "^2.6.1",
     "nodemon": "^2.0.20",
     "path": "^0.12.7",
+    "supertest": "^6.3.3",
     "synonyms": "^1.0.1",
-    "url": "^0.11.0",
-    "wordpos": "^2.1.0"
+    "url": "^0.11.0"
+  },
+  "devDependencies": {
+    "nyc": "^15.1.0"
   }
 }

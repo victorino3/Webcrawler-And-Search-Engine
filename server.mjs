@@ -1,7 +1,7 @@
 import express from 'express'
 import cors from "cors"
 import exphbs  from 'express-handlebars'
-import {run,completeSearch} from "../Backend/DB/aggregation.mjs"
+import {run,completeSearch} from "./DB/aggregation.mjs"
 import {fileURLToPath} from 'url';
 import { join } from "path"
 import path from 'path';
@@ -61,3 +61,4 @@ app.get('/auto-search',async (req, res) => {
 )
 
 app.listen(port, console.log("listening on port", port))
+export {app}
