@@ -27,9 +27,11 @@ app.engine('.hbs', exphbs.engine({ extname: '.hbs', defaultLayout: "index"}));
 
 app.get('/product/macbook-pro', async(req, res) => {
     try {
+        res.status(200)
         res.render('main');
     } catch (error) {
         console.log(error)
+        res.status(400)
         res.render('error');
     }
     

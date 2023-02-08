@@ -5,7 +5,7 @@
   "main": "server.mjs",
   "type": "module",
   "scripts": {
-    "test": "mocha --experimental-modules --no-warnings test/*.test.mjs",
+    "test": "mocha --experimental-modules --parallel --no-warnings test/*.test.mjs",
     "test-cov": "npx nyc mocha --parallel --experimental-modules --no-warnings test/*.test.mjs",
     "start": "nodemon server.mjs"
   },
