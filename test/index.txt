@@ -125,7 +125,7 @@
 
 <!--Content-->
 
-<div class="row row-cols-1 row-cols-md-3 g-4 m-2 ">
+<div class="row row-cols-1 row-cols-md-3 g-4 m-2 333">
 
 </div>
 
@@ -135,3 +135,8 @@
           name: "autoSearch",
           source: "http://localhost:3000/auto-search?key=%QUERY",
           limit: 6,
+        });
+      });
+</script>
+  </body>
+</html>
