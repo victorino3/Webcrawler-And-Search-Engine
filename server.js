@@ -7,8 +7,6 @@ const { join } = require("path")
 const path = require('path');
 const { config } = require("dotenv")
 const { ok } = require("assert")
-//const __filename = fileURLToPath(import.meta.url);
-//const __dirname = path.dirname(__filename);
 const env =process.env.NODE_ENV || "dev" && "prod"
 ok(env === "dev" || env === "prod" , "Invalid environment specified")
 const confiPath =join(__dirname, "./dotenv", `.env.${env}`)
@@ -63,4 +61,5 @@ app.get('/auto-search',async (req, res) => {
 )
 
 app.listen(port, console.log("listening on port", port))
-module.export = app
+
+module.exports = app
