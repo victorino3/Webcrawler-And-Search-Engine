@@ -1,5 +1,5 @@
-import { MongoClient } from "mongodb"
-import {alterSearch} from "./helpers/naturalprocess.js"
+const { MongoClient } = require("mongodb")
+const alterSearch = require("./helpers/naturalprocess.js")
 
 async function run(search) {
     try {
@@ -67,7 +67,7 @@ async function completeSearch(search) {
     
 
 }
-export {run,completeSearch}
+module.exports  =  {run,completeSearch}
 
 
 

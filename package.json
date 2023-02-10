@@ -2,12 +2,18 @@
   "name": "webcrawlernode",
   "version": "1.0.0",
   "description": "",
-  "main": "server.mjs",
-  "type": "module",
+  "main": "server.js",
+  "nyc": {
+    "include": [
+      "server.js"
+    ],
+    "all": true
+  },
   "scripts": {
-    "test": "mocha --experimental-modules --parallel --no-warnings test/*.test.mjs",
-    "test-cov": "npx nyc mocha --parallel --experimental-modules --no-warnings test/*.test.mjs",
-    "start": "nodemon server.mjs"
+    "test": "mocha --experimental-modules  --no-warnings test/*.test.js",
+    "test:cov": "nyc --reporter=html --reporter=text mocha --parallel test/*.test.js",
+    "coverage": "nyc mocha --parallel",
+    "start": "nodemon server.js"
   },
   "keywords": [],
   "author": "",
@@ -19,7 +25,6 @@
     "express": "^4.18.2",
     "express-handlebars": "^6.0.6",
     "fs": "^0.0.1-security",
-    "mocha": "^10.2.0",
     "mongodb": "^4.10.0",
     "mongoose": "^6.6.5",
     "natural": "^5.2.4",
@@ -31,6 +36,8 @@
     "url": "^0.11.0"
   },
   "devDependencies": {
+    "coveralls": "^3.1.1",
+    "mocha": "^10.2.0",
     "nyc": "^15.1.0"
   }
 }

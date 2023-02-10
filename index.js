@@ -1,10 +1,10 @@
 import fetch from "node-fetch"
 import { load } from "cheerio"
 import urlParser from "url"
-import {macbookPro} from ".././Backend/DB/Shemas/macbookpro.mjs"
-import {macbookAir} from ".././Backend/DB/Shemas/macbookair.mjs"
-import {iphoneColl} from ".././Backend/DB/Shemas/iphone.mjs"
-import {bigDataX} from ".././Backend/DB/Shemas/bigData.mjs"
+import {macbookPro} from "./DB/Shemas/macbookpro.js"
+import {macbookAir} from "./DB/Shemas/macbookair.js"
+import {iphoneColl} from "./DB/Shemas/iphone.js"
+import {bigDataX} from "./DB/Shemas/bigData.js"
 const seenUrls = {};
 
 function isEmpty(arr) {

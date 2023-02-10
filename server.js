@@ -1,14 +1,14 @@
-import express from 'express'
-import cors from "cors"
-import exphbs  from 'express-handlebars'
-import {run,completeSearch} from "./DB/aggregation.mjs"
-import {fileURLToPath} from 'url';
-import { join } from "path"
-import path from 'path';
-import { config } from "dotenv"
-import { ok } from "assert"
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const express = require('express')
+const cors = require("cors")
+const exphbs  = require('express-handlebars')
+const {run,completeSearch} = require("./DB/aggregation.js")
+const {fileURLToPath} = require('url');
+const { join } = require("path")
+const path = require('path');
+const { config } = require("dotenv")
+const { ok } = require("assert")
+//const __filename = fileURLToPath(import.meta.url);
+//const __dirname = path.dirname(__filename);
 const env =process.env.NODE_ENV || "dev" && "prod"
 ok(env === "dev" || env === "prod" , "Invalid environment specified")
 const confiPath =join(__dirname, "./dotenv", `.env.${env}`)
@@ -63,4 +63,4 @@ app.get('/auto-search',async (req, res) => {
 )
 
 app.listen(port, console.log("listening on port", port))
-export {app}
+module.export = app

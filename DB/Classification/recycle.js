@@ -1,7 +1,7 @@
-import {readFileSync} from "fs"
-import {macbookPro} from ".././Shemas/macbookpro.mjs"
-import {macbookAir} from ".././Shemas/macbookair.mjs"
-import {bigDataX} from ".././Shemas/bigData.mjs"
+const {readFileSync} = require("fs")
+const {macbookPro} = require("../Shemas/macbookpro.js")
+const {macbookAir} = require("../Shemas/macbookair.js")
+const {bigDataX} = require("../Shemas/bigData.js")
 let allimage = "../allImage.txt"
 let all_product = "../all_product.txt"
 

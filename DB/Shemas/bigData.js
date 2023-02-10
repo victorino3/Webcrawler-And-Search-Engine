@@ -1,8 +1,8 @@
-import dotenv from "dotenv"
+const dotenv = require("dotenv")
 dotenv.config({ path: "../../dotenv/.env.prod" })
 dotenv.config({ encoding: 'latin1' })
-import {connected} from ".././DB.js"
-import {Schema} from "mongoose"
+const {connected} = require("../DB.js")
+const {Schema} = require("mongoose")
  
 const bigData = new Schema({
 
@@ -18,4 +18,6 @@ const bigData = new Schema({
 
 );
 
-export const bigDataX = connected().model('bigData', bigData);
+
+const bigDataX = connected().model('bigData', bigData);
+module.exports =  bigDataX;

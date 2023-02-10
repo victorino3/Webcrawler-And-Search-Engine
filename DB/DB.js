@@ -1,8 +1,8 @@
-import mongoose from 'mongoose';
-import dotenv from "dotenv"
+const mongoose = require('mongoose');
+const dotenv = require("dotenv")
 dotenv.config({ path: 'dotenv/.env.prod' })
 dotenv.config({ encoding: 'latin1' })
-export function connected() {
+module.exports =  function connected() {
     mongoose.connect(process.env.ULR_MONGODB, {
         useNewUrlParser: true
     }, function (error) {
