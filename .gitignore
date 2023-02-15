@@ -11,3 +11,5 @@ index.js
 .nycrc.json
 /coverage
 /.nyc_output
+/test/error.txt
+/test/index.txt

@@ -10,8 +10,8 @@
     "all": true
   },
   "scripts": {
-    "test": "mocha --experimental-modules  --no-warnings test/*.test.js",
-    "test:cov": "nyc --reporter=html --reporter=text mocha --parallel test/*.test.js",
+    "test": "mocha --parallel test/*.test.js",
+    "test:cov": "nyc --reporter=html --reporter=text mocha --parallel --exit test/*.test.js",
     "coverage": "nyc mocha --parallel",
     "start": "nodemon server.js"
   },
