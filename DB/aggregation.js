@@ -25,7 +25,6 @@ async function run(search) {
         let word_2 =""
         
         if(newInput.includes(word_1)){
-            console.log( Object.keys(searchResult).length)
             let distanceToCompare =await mydb.find({ 'title': new RegExp(newInput.substring(0, 3), 'ig') }).toArray()
             if(Object.keys(searchResult).length > 0){
                

@@ -13,3 +13,4 @@ index.js
 /.nyc_output
 /test/error.txt
 /test/index.txt
+/test/response-mac.txt
