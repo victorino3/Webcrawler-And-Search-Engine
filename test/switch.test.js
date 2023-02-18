@@ -27,14 +27,29 @@ describe("Test Switch",()=>{
         })
 
         it("track user input in search field", async()=>{
-            const expect =`W/"1b9d-7MEtOMgRHk1G70MARHXvP81t/Sc"`
-            const response = await request(app)
+           
+                const expect =`W/"1b9d-7MEtOMgRHk1G70MARHXvP81t/Sc"`
+                const response = await request(app)
                             .post("/product/search")
                             .send({
                                 autoSearch: "mac",
                                 origin: "localhost:3000",
                             });
-            assert.deepStrictEqual(response.header.etag,expect.trim());
+                assert.deepStrictEqual(response.header.etag,expect.trim());
+           
+        })
+        it("track user input in search field when is empty", async()=>{
+           
+                const expected = 401
+                const secondExpected = 500
+                const response = await request(app)
+                            .post("/product/search")
+                            .send({
+                                autoSearch: "",
+                                origin: "localhost:3000",
+                            });    
+                    assert.deepStrictEqual(response.status,expected);
+       
         })
                          
  })

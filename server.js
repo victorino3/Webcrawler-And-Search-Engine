@@ -23,30 +23,24 @@ app.engine('.hbs', exphbs.engine({ extname: '.hbs', defaultLayout: "index" }));
 
 
 app.get('/product/macbook-pro',(req, res) => {
-        res.status(200)
-        res.render('main');
+        res.status(200).render('main');
 
 });
 app.get('/product/macbook-proX',(req,res)=> {
-    
-        res.status(400);
-        res.render('error'); 
-   
+        res.status(400).render('error');  
   });
 
 
-app.post('/product/search', async (req, res) => {
-    try {
+  app.post('/product/search', async (req, res) => {
         const params = req.body
         if (!params.autoSearch) {
-            return res.render('error');
+            return res.status(401).render('error');
         }
         let data = await run(params.autoSearch)
-        res.render('main', { data });
-    } catch (error) {
-        res.render('error');
-    }
+       
+        res.status(200).render('main', { data });
 });
+
 
 app.get('/auto-search', async (req, res) => {
     let data = await completeSearch(req.query.term)
