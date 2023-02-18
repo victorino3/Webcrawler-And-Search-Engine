@@ -41,7 +41,6 @@ describe("Test Switch",()=>{
         it("track user input in search field when is empty", async()=>{
            
                 const expected = 401
-                const secondExpected = 500
                 const response = await request(app)
                             .post("/product/search")
                             .send({
