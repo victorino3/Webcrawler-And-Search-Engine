@@ -10,8 +10,8 @@
     "all": true
   },
   "scripts": {
-    "test": "mocha --parallel test/*.test.js",
-    "test:cov": "nyc --reporter=html --reporter=text mocha --parallel --timeout 10000 --exit test/*.test.js",
+    "test": "mocha --parallel --timeout=2000  test/*.test.js",
+    "test:cov": "nyc --reporter=html --reporter=text mocha --parallel --exit test/*.test.js",
     "coverage": "nyc mocha --parallel",
     "start": "nodemon server.js"
   },
@@ -19,6 +19,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^1.3.3",
     "cheerio": "^1.0.0-rc.12",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
