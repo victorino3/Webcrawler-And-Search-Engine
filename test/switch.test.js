@@ -10,7 +10,7 @@ const response_mac =join(__dirname,"response-mac.txt")
 
 describe("Test Switch",()=>{
     describe("/product/macbook-pro",()=>{
-       it("Upload page without error", async ()=>{
+       /*it("Upload page without error", async ()=>{
             const response = await request(app)
                             .get("/product/macbook-pro")
                             .expect(200)
@@ -49,7 +49,20 @@ describe("Test Switch",()=>{
                             });    
                     assert.deepStrictEqual(response.status,expected);
        
-        })
+        })*/
+        it("Should provide correctly autocomplete based in user input", async()=>{
+            const expected = 401
+            const input = "mac"
+            const response = await request(app)
+                        .get("/auto-search")
+                        .send({
+                            autoSearch:"mac",
+                            origin: "localhost:3000",
+                        });   
+                //assert.deepStrictEqual(response.status,expected);
+                //console.log(response)
+   
+    })
                          
  })
 

@@ -8,7 +8,7 @@ async function run(search) {
         const mydb = await db.collection('bigData')
         const text = await mydb.createIndex({"title":"text"})
         let myInput = search
-        let searchResult = await mydb.find({$text: {$search: myInput}}, {
+        let searchResult = await mydb.find({$text: {$search:myInput}}, {
             projection: {score: {$meta: "textScore"}},
             sort : {score:{$meta:"textScore"}}}
             ).toArray()
@@ -22,8 +22,6 @@ async function run(search) {
         let newInput = alterSearch(splitInput[0]) 
         
         let word_1 ="macintosh"
-        let word_2 =""
-        
         if(newInput.includes(word_1)){
             let distanceToCompare =await mydb.find({ 'title': new RegExp(newInput.substring(0, 3), 'ig') }).toArray()
             if(Object.keys(searchResult).length > 0){
