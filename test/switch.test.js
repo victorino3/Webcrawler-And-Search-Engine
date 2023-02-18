@@ -55,7 +55,7 @@ describe("Test Switch",()=>{
             const expected = 401
             const termoDeBusca = "mac"
             const query = { nome: { $regex: termoDeBusca.toString(), $options: 'i' } };
-            const response = await axios.get(`http://localhost:3000/auto-search?key=${termoDeBusca}`);
+            const response = await axios.get(`auto-search?key=${query}`);
                 assert.deepStrictEqual(response.status,expected)
    
     })

@@ -3,7 +3,7 @@ const alterSearch = require("./helpers/naturalprocess.js")
 
 async function run(search) {
     try {
-        const client = await MongoClient.connect("mongodb://127.0.0.1:27017/mackdb");
+        const client = await MongoClient.connect(process.env.ULR_MONGODB);
         const db = client.db('mackdb');
         const mydb = await db.collection('bigData')
         const text = await mydb.createIndex({"title":"text"})
